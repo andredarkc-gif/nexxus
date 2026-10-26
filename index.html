@@ -7,8 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
         .inspector-section > summary::-webkit-details-marker { display: none; }
         .inspector-section[open] .inspector-chevron { transform: rotate(180deg); }
@@ -36,97 +38,6 @@
             color: #fda4af !important;
         }
 
-        /* Animação do Cubo Giratório 3D */
-        .cube-container {
-            perspective: 1000px;
-            width: 120px;
-            height: 120px;
-        }
-        .cube-3d {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: spinCube 10s infinite linear;
-        }
-        .cube-face {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: rgba(6, 182, 212, 0.2);
-            border: 2px solid rgba(56, 189, 248, 0.8);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3) inset;
-        }
-        .face-front  { transform: translateZ(60px); }
-        .face-back   { transform: rotateY(180deg) translateZ(60px); }
-        .face-right  { transform: rotateY(90deg) translateZ(60px); }
-        .face-left   { transform: rotateY(-90deg) translateZ(Aqui está o código completo corrigido.
-
-### O que foi feito nesta versão:
-1. **Recursos Poderosos Restaurados:** A seção completa com os cartões de funcionalidades (Criação Dinâmica de HUB, Personagem Jogável, Blocos Sólidos & Colisão e Pintura 3D) foi adicionada novamente na página inicial.
-2. **Cubo 3D com Logo Giratória Ajustado:** A área de visualização na *Hero Section* (lado direito) agora possui o cubo 3D animado com a logo que gira continuamente via CSS 3D.
-3. **Preservação de 100% da Estrutura:** Todo o editor 3D interno, funções de Three.js, gerenciador de HUB/UI, inspetor e controles de câmera foram mantidos intactos.
-
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus3D Engine — 1.0 Beta Oficial</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-    <script src="[https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js](https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js)"></script>
-    <style>
-        @import url('[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)');
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
-        .inspector-section > summary::-webkit-details-marker { display: none; }
-        .inspector-section[open] .inspector-chevron { transform: rotate(180deg); }
-        .inspector-chevron { transition: transform 0.2s ease; }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
-
-        /* Animação do Cubo Giratório em 3D */
-        .cube-wrapper {
-            perspective: 1000px;
-        }
-        .cube-3d {
-            width: 100px;
-            height: 100px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotateCube 10s infinite linear;
-        }
-        .cube-face {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(37, 99, 235, 0.8));
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
-        }
-        .face-front  { transform: rotateY(0deg) translateZ(50px); }
-        .face-back   { transform: rotateY(180deg) translateZ(50px); }
-        .face-right  { transform: rotateY(90deg) translateZ(50px); }
-        .face-left   { transform: rotateY(-90deg) translateZ(50px); }
-        .face-top    { transform: rotateX(90deg) translateZ(50px); }
-        .face-bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-        @keyframes rotateCube {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
-        }
-    
         .tool-category > summary { list-style: none; }
         .tool-category > summary::-webkit-details-marker { display: none; }
         .tool-category-chevron { transition: transform .18s ease; }
@@ -422,6 +333,9 @@
                             <button onclick="openImportProject()" class="px-6 py-3.5 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-slate-100 font-bold rounded-2xl transition-all flex items-center justify-center">
                                 <i class="fa-solid fa-folder-open mr-2.5 text-amber-300"></i>Abrir projeto
                             </button>
+                            <button id="restore-project-btn" type="button" onclick="restoreLocalProject()" class="hidden px-6 py-3.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-200 font-bold rounded-2xl transition-all items-center justify-center">
+                                <i class="fa-solid fa-clock-rotate-left mr-2.5"></i>Continuar projeto salvo
+                            </button>
                         </div>
 
                         <div class="mt-7 flex flex-wrap gap-2.5 text-[11px] text-slate-500">
@@ -657,6 +571,10 @@
         <div id="editor-workspace" class="flex-grow flex relative overflow-hidden">
             <!-- Container do Viewport e Canvas de HUB/UI Overlay -->
             <div id="canvas-container" class="flex-grow relative h-full bg-slate-950 cursor-grab active:cursor-grabbing">
+
+                <div class="mobile-touch-hint absolute bg-slate-900/85 border border-slate-800 rounded-xl text-slate-300 pointer-events-none">
+                    <span class="font-semibold text-white">Toque:</span> arraste para girar • arraste sobre objeto para mover • dois dedos para zoom
+                </div>
 
                 <!-- Camada de HUB/UI no topo da cena 3D -->
                 <div id="game-ui-overlay" class="absolute inset-0 pointer-events-none z-20"></div>
@@ -1907,6 +1825,132 @@
 <script>
     let activeToolFilter = 'all';
 
+    // ==============================
+    // UTILITÁRIOS DE SEGURANÇA E ROBUSTEZ
+    // ==============================
+    const touchGesture = { active: false, pinching: false, pinchDistance: 0, lastX: 0, lastY: 0 };
+    let firstPersonTouchActive = false;
+    let lastWeaponHudSignature = '';
+    let autosaveFailureNotified = false;
+    let uiIdCounter = 0;
+
+    // Escapa texto antes de inseri-lo em innerHTML (projetos importados não são confiáveis).
+    function escapeHTML(value) {
+        const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+        return String(value === null || value === undefined ? '' : value).replace(/[&<>"']/g, ch => map[ch]);
+    }
+
+    // IDs sequenciais e únicos (antes: Math.random()*1000, que colidia com poucas dezenas de objetos).
+    function generateObjectId(prefix = 'Cube') {
+        const used = new Set(objects.map(o => o.id));
+        let max = 0;
+        const matcher = new RegExp('^' + prefix + '_(\\d+)$');
+        used.forEach(id => {
+            const m = matcher.exec(id);
+            if (m) max = Math.max(max, Number(m[1]));
+        });
+        let next = max + 1;
+        while (used.has(prefix + '_' + next)) next++;
+        return prefix + '_' + next;
+    }
+
+    function ensureUniqueObjectId(rawId, prefix = 'Cube') {
+        const base = String(rawId || '').slice(0, 80);
+        if (base && !objects.some(o => o.id === base)) return base;
+        return generateObjectId(prefix);
+    }
+
+    function generateUIId() {
+        uiIdCounter++;
+        return 'UI_' + Date.now().toString(36) + '_' + uiIdCounter;
+    }
+
+    function isTypingTarget(target) {
+        if (!target || !target.tagName) return false;
+        if (target.isContentEditable) return true;
+        const tag = target.tagName;
+        if (tag === 'TEXTAREA') return true;
+        if (tag === 'SELECT') return !isPlayMode;
+        if (tag !== 'INPUT') return false;
+        return !['checkbox', 'radio', 'range', 'color', 'button', 'submit', 'file'].includes((target.type || '').toLowerCase());
+    }
+
+    function moveToward(current, target, maxDelta) {
+        if (Math.abs(target - current) <= maxDelta) return target;
+        return current + Math.sign(target - current) * maxDelta;
+    }
+
+    function showToast(message, duration = 6000) {
+        const toast = document.createElement('div');
+        toast.setAttribute('role', 'status');
+        toast.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 z-[90] max-w-sm w-[calc(100%-2rem)] bg-amber-950/95 border border-amber-500/40 text-amber-100 text-xs font-semibold rounded-xl px-4 py-3 shadow-2xl text-center';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), duration);
+    }
+
+    // Reduz imagens importadas para não estourar o limite (~5 MB) do localStorage.
+    function fileToCompressedDataURL(file, maxSide = 1024, quality = 0.85) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onerror = () => reject(new Error('Falha ao ler o arquivo.'));
+            reader.onload = () => {
+                const original = String(reader.result);
+                const img = new Image();
+                img.onerror = () => reject(new Error('Imagem inválida.'));
+                img.onload = () => {
+                    try {
+                        const longest = Math.max(img.naturalWidth, img.naturalHeight) || 1;
+                        const scale = Math.min(1, maxSide / longest);
+                        if (scale >= 1 && original.length < 700000) { resolve(original); return; }
+                        const canvas = document.createElement('canvas');
+                        canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+                        canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+                        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+                        const keepAlpha = file.type === 'image/png' || file.type === 'image/webp';
+                        const compressed = canvas.toDataURL(keepAlpha ? 'image/webp' : 'image/jpeg', quality);
+                        resolve(compressed.length < original.length ? compressed : original);
+                    } catch (error) {
+                        resolve(original);
+                    }
+                };
+                img.src = original;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Validação mínima de um projeto (tolerante a versões antigas sem uiElements).
+    const MAX_PROJECT_FILE_BYTES = 60 * 1024 * 1024;
+    const MAX_PROJECT_OBJECTS = 5000;
+    function isValidProjectData(data) {
+        if (!data || data.format !== 'nexus3d-project' || !Array.isArray(data.objects)) return false;
+        if (data.objects.length > MAX_PROJECT_OBJECTS) return false;
+        if (!Array.isArray(data.uiElements)) data.uiElements = [];
+        return true;
+    }
+
+    const LOCAL_BACKUP_KEY = 'nexus3d_autosave_backup_v1';
+    function hasMeaningfulLocalSave() {
+        try {
+            const raw = localStorage.getItem(LOCAL_SAVE_KEY);
+            if (!raw) return false;
+            const data = JSON.parse(raw);
+            return !!(data && Array.isArray(data.objects) && data.objects.length > 0);
+        } catch (error) { return false; }
+    }
+    function backupLocalSave() {
+        try {
+            const raw = localStorage.getItem(LOCAL_SAVE_KEY);
+            if (raw) localStorage.setItem(LOCAL_BACKUP_KEY, raw);
+        } catch (error) { /* sem espaço: segue sem backup */ }
+    }
+
+    const DUPLICATE_SETTING_KEYS = ['npcName', 'npcChaseEnabled', 'npcChaseSpeed', 'npcChaseStopDistance', 'npcInteractionEnabled', 'npcInteractionDistance', 'npcInteractionKey', 'npcDialogue', 'npcDamageEnabled', 'npcDamageAmount', 'npcDamageCooldown', 'healthEnabled', 'maxHealth', 'healthShowBar', 'healthBarPosition', 'npcDeathMode', 'npcRespawnDelay', 'damageSourceEnabled', 'damageSourceAmount', 'damageSourceTarget', 'damageSourceCooldown', 'weaponStartingId', 'weaponDropId', 'weaponDropChance'];
+    function copyGameplaySettings(from, to) {
+        DUPLICATE_SETTING_KEYS.forEach(key => { if (from[key] !== undefined) to[key] = from[key]; });
+    }
+
     function setToolFilter(filter) {
         activeToolFilter = filter || 'all';
         document.querySelectorAll('[data-tool-filter]').forEach(btn => {
@@ -1958,6 +2002,9 @@
         const name = document.getElementById('project-name-input').value.trim();
         if (!name) return;
 
+        if (hasMeaningfulLocalSave() && !confirm('Já existe um projeto salvo neste navegador. Criar um novo vai substituí-lo (uma cópia de segurança será mantida). Deseja continuar?')) return;
+        backupLocalSave();
+
         currentProjectName = name;
         closeProjectModal();
 
@@ -1974,6 +2021,7 @@
 
     function returnToLanding() {
         if (isPlayMode) stopPlayMode();
+        if (renderer && objects.length > 0) saveProjectLocal(true);
         closeNPCDialog();
         cancelAnimationFrame(animationFrameId);
         animationFrameId = null;
@@ -1983,32 +2031,13 @@
         if (renderer) {
             disposeFloorResources();
             disposeEnvironmentResources();
+            const staleCanvas = renderer.domElement;
             renderer.dispose();
+            if (staleCanvas && staleCanvas.parentNode) staleCanvas.parentNode.removeChild(staleCanvas);
             renderer = null;
             scene = null;
             camera = null;
             gridHelper = null;
-            document.getElementById('canvas-container').innerHTML = `
-                <div class="mobile-touch-hint absolute bg-slate-900/85 border border-slate-800 rounded-xl text-slate-300 pointer-events-none">
-                    <span class="font-semibold text-white">Toque:</span> arraste para girar • arraste sobre objeto para mover • dois dedos para zoom
-                </div>
-                <div id="game-ui-overlay" class="absolute inset-0 pointer-events-none z-20"></div>
-                <div id="health-bars-overlay"></div>
-                <div id="mobile-play-controls" aria-label="Controles de toque">
-                    <div class="w-full flex items-end justify-between">
-                        <div id="mobile-dpad" aria-label="Movimento">
-                            <button type="button" class="mobile-control-button forward" aria-label="Para frente"><i class="fa-solid fa-chevron-up"></i></button>
-                            <button type="button" class="mobile-control-button left" aria-label="Esquerda"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button type="button" class="mobile-control-button backward" aria-label="Para trás"><i class="fa-solid fa-chevron-down"></i></button>
-                            <button type="button" class="mobile-control-button right" aria-label="Direita"><i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
-                        <div id="mobile-action-buttons">
-                            <button type="button" id="mobile-crouch-button" class="mobile-control-button" aria-label="Agachar"><i class="fa-solid fa-person-crouching"></i></button>
-                            <button type="button" id="mobile-jump-button" class="mobile-control-button" aria-label="Pular"><i class="fa-solid fa-arrow-up"></i></button>
-                        </div>
-                    </div>
-                </div>
-            `;
         }
         selectedObject = null;
         paintTargetObject = null;
@@ -2016,6 +2045,8 @@
         isPaintingPixels = false;
         savedState = null;
         isPlayMode = false;
+        Object.keys(keysPressed).forEach(k => { keysPressed[k] = false; });
+        refreshLocalSaveButton();
     }
 
     document.getElementById('cube-color').addEventListener('input', (e) => {
@@ -2304,7 +2335,7 @@
         if (!dataURL || !scene) return;
         const img = new Image();
         img.onload = () => {
-            if (!environmentMeshes.length) return;
+            if (!environmentMeshes.length || environmentData.wallTextureDataURL !== dataURL) return;
             if (environmentWallTexture && environmentWallTexture.dispose) environmentWallTexture.dispose();
             const tex = new THREE.Texture(img);
             tex.wrapS = THREE.RepeatWrapping; tex.wrapT = THREE.RepeatWrapping;
@@ -2323,6 +2354,7 @@
         if (!dataURL || !skyMesh) return;
         const img = new Image();
         img.onload = () => {
+            if (environmentData.skyTextureDataURL !== dataURL || !skyMesh) return;
             if (environmentSkyTexture && environmentSkyTexture.dispose) environmentSkyTexture.dispose();
             const tex = new THREE.Texture(img);
             tex.magFilter = THREE.LinearFilter; tex.minFilter = THREE.LinearMipmapLinearFilter;
@@ -2342,32 +2374,28 @@
         const file = event.target.files && event.target.files[0];
         event.target.value = '';
         if (!file) return;
-        const reader = new FileReader();
-        reader.onload = () => {
+        fileToCompressedDataURL(file, 1024).then(dataURL => {
             environmentData.wallTextureType = 'image';
-            environmentData.wallTextureDataURL = reader.result;
+            environmentData.wallTextureDataURL = dataURL;
             const select = document.getElementById('env-wall-texture-type');
             if (select) select.value = 'image';
             buildEnvironment();
             scheduleAutoSave();
-        };
-        reader.readAsDataURL(file);
+        }).catch(() => alertCustom('Erro na textura', 'Não foi possível ler a imagem selecionada.'));
     }
 
     function importSkyTexture(event) {
         const file = event.target.files && event.target.files[0];
         event.target.value = '';
         if (!file) return;
-        const reader = new FileReader();
-        reader.onload = () => {
-            environmentData.skyTextureDataURL = reader.result;
+        fileToCompressedDataURL(file, 2048).then(dataURL => {
+            environmentData.skyTextureDataURL = dataURL;
             environmentData.ceilingMode = 'sky';
             const select = document.getElementById('env-ceiling-mode');
             if (select) select.value = 'sky';
             buildEnvironment();
             scheduleAutoSave();
-        };
-        reader.readAsDataURL(file);
+        }).catch(() => alertCustom('Erro na textura', 'Não foi possível ler a imagem selecionada.'));
     }
 
     function updateEnvironmentWalls() {
@@ -2541,6 +2569,7 @@
         const img = new Image();
         img.onload = () => {
             if (!floorMaterial || !floorMesh) return;
+            if (floorData.textureDataURL !== dataURL) return;
             if (floorMaterial.map) floorMaterial.map.dispose();
             const texture = new THREE.Texture(img);
             texture.wrapS = THREE.RepeatWrapping;
@@ -2777,15 +2806,12 @@
         const file = event.target.files && event.target.files[0];
         event.target.value = '';
         if (!file) return;
-        const reader = new FileReader();
-        reader.onload = () => {
+        fileToCompressedDataURL(file, 1024).then(dataURL => {
             floorData.textureType = 'image';
-            floorData.textureDataURL = String(reader.result);
+            floorData.textureDataURL = dataURL;
             buildFloorMesh();
             scheduleAutoSave();
-        };
-        reader.onerror = () => alertCustom('Erro na textura', 'Não foi possível ler a imagem selecionada.');
-        reader.readAsDataURL(file);
+        }).catch(() => alertCustom('Erro na textura', 'Não foi possível ler a imagem selecionada.'));
     }
 
     function toggleFloorEditMode() {
@@ -2910,7 +2936,7 @@
         const action = document.getElementById('ui-action-select').value;
 
         const uiObj = {
-            id: 'UI_' + Math.floor(Math.random() * 10000),
+            id: generateUIId(),
             text: text,
             type: type,
             position: pos,
@@ -2943,10 +2969,19 @@
         uiElements.forEach(el => {
             const item = document.createElement('div');
             item.className = 'flex items-center justify-between bg-slate-900/60 border border-slate-800 px-2.5 py-1.5 rounded-lg text-slate-300';
-            item.innerHTML = `
-                <span class="truncate max-w-[140px]"><i class="fa-solid ${el.type === 'button' ? 'fa-hand-pointer text-indigo-400' : 'fa-font text-cyan-400'} mr-1.5"></i>${el.text}</span>
-                <button onclick="removeUIElement('${el.id}')" class="text-slate-500 hover:text-rose-400 transition-colors"><i class="fa-solid fa-trash"></i></button>
-            `;
+            const itemLabel = document.createElement('span');
+            itemLabel.className = 'truncate max-w-[140px]';
+            const itemIcon = document.createElement('i');
+            itemIcon.className = 'fa-solid ' + (el.type === 'button' ? 'fa-hand-pointer text-indigo-400' : 'fa-font text-cyan-400') + ' mr-1.5';
+            itemLabel.appendChild(itemIcon);
+            itemLabel.appendChild(document.createTextNode(el.text));
+            const itemRemove = document.createElement('button');
+            itemRemove.type = 'button';
+            itemRemove.className = 'text-slate-500 hover:text-rose-400 transition-colors';
+            itemRemove.setAttribute('aria-label', 'Remover elemento');
+            itemRemove.innerHTML = '<i class="fa-solid fa-trash"></i>';
+            itemRemove.addEventListener('click', () => removeUIElement(el.id));
+            item.append(itemLabel, itemRemove);
             listContainer.appendChild(item);
 
             const uiDiv = document.createElement('div');
@@ -3295,20 +3330,22 @@
         if (!canvas || canvas.dataset.bound === '1') return;
         canvas.dataset.bound = '1';
         canvas.addEventListener('contextmenu', (e) => e.preventDefault());
-        canvas.addEventListener('mousedown', (e) => {
+        canvas.addEventListener('pointerdown', (e) => {
             if (e.button !== 0 && e.button !== 2) return;
             e.preventDefault();
+            if (canvas.setPointerCapture) { try { canvas.setPointerCapture(e.pointerId); } catch (_) {} }
             paintEditorPixelFromEvent(e, e.button === 2);
             canvas.dataset.painting = '1';
             canvas.dataset.erase = e.button === 2 ? '1' : '0';
         });
-        canvas.addEventListener('mousemove', (e) => {
+        canvas.addEventListener('pointermove', (e) => {
             if (canvas.dataset.painting !== '1') return;
             paintEditorPixelFromEvent(e, canvas.dataset.erase === '1');
         });
-        window.addEventListener('mouseup', () => {
-            canvas.dataset.painting = '0';
-        });
+        const stopPixelPainting = () => { canvas.dataset.painting = '0'; };
+        canvas.addEventListener('pointerup', stopPixelPainting);
+        canvas.addEventListener('pointercancel', stopPixelPainting);
+        window.addEventListener('pointerup', stopPixelPainting);
     }
 
     const DEFAULT_PLAYER_CONTROLS = Object.freeze({ forward: 'KeyW', backward: 'KeyS', left: 'KeyA', right: 'KeyD', jump: 'Space', sprint: 'ShiftLeft', crouch: 'ControlLeft' });
@@ -3564,7 +3601,7 @@
 
         renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(width, height);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         container.appendChild(renderer.domElement);
@@ -3613,7 +3650,16 @@
                 if (playerObject) playerObject.mesh.rotation.y = firstPersonYaw;
                 updateFirstPersonCamera();
             });
+            window.addEventListener('mouseup', onPointerUp);
+            window.addEventListener('blur', () => {
+                Object.keys(keysPressed).forEach(k => { keysPressed[k] = false; });
+                onPointerUp();
+            });
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) Object.keys(keysPressed).forEach(k => { keysPressed[k] = false; });
+            });
             window.addEventListener('keydown', (e) => {
+                if (isTypingTarget(e.target)) return;
                 if (npcRebindingKey && selectedObject && selectedObject.type === 'npc') {
                     e.preventDefault();
                     finishNPCKeyRebind(e.code);
@@ -3659,6 +3705,7 @@
         setupPixelEditorEvents();
         renderPixelEditor();
         updatePaintFaceButtons();
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
         animate();
     }
 
@@ -3914,8 +3961,7 @@
             mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 
             raycaster.setFromCamera(mouse, camera);
-            const intersectPoint = new THREE.Vector3();
-            raycaster.ray.intersectPlane(dragPlane, intersectPoint);
+            const intersectPoint = raycaster.ray.intersectPlane(dragPlane, new THREE.Vector3());
 
             if (intersectPoint) {
                 selectedObject.mesh.position.x = intersectPoint.x;
@@ -3955,6 +4001,7 @@
         if (!container || !renderer) return;
         const width = container.clientWidth;
         const height = container.clientHeight;
+        if (!width || !height) return;
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
         renderer.setSize(width, height);
@@ -4114,12 +4161,18 @@
         try {
             const data = buildProjectData();
             localStorage.setItem(LOCAL_SAVE_KEY, JSON.stringify(data));
+            autosaveFailureNotified = false;
             refreshLocalSaveButton();
             if (!silent) alertCustom('Projeto salvo', 'Uma cópia atual do projeto foi salva no navegador. Use Exportar para gerar um arquivo .n3d.');
             return true;
         } catch (error) {
             console.error('Erro ao salvar projeto localmente:', error);
-            if (!silent) alertCustom('Erro ao salvar', 'Não foi possível salvar o projeto no armazenamento local deste navegador.');
+            if (!silent) {
+                alertCustom('Erro ao salvar', 'Não foi possível salvar o projeto no armazenamento local deste navegador. Use Exportar para guardar seu trabalho em arquivo.');
+            } else if (!autosaveFailureNotified) {
+                autosaveFailureNotified = true;
+                showToast('O salvamento automático falhou (armazenamento do navegador cheio). Use Exportar para não perder seu trabalho.');
+            }
             return false;
         }
     }
@@ -4145,7 +4198,7 @@
         const url = URL.createObjectURL(blob);
         const anchor = document.createElement('a');
         anchor.href = url;
-        anchor.download = `${escapeFileName(currentProjectName)}.n3d.json`;
+        anchor.download = `${escapeFileName(currentProjectName)}.n3d`;
         document.body.appendChild(anchor);
         anchor.click();
         anchor.remove();
@@ -4179,7 +4232,7 @@
                 return;
             }
             const data = JSON.parse(raw);
-            if (!data || data.format !== 'nexus3d-project' || !Array.isArray(data.objects) || !Array.isArray(data.uiElements)) {
+            if (!isValidProjectData(data)) {
                 throw new Error('Salvamento local inválido.');
             }
             openImportedProject(data);
@@ -4193,12 +4246,16 @@
         const file = event.target.files && event.target.files[0];
         event.target.value = '';
         if (!file) return;
+        if (file.size > MAX_PROJECT_FILE_BYTES) {
+            alertCustom('Arquivo muito grande', 'O projeto selecionado passa de 60 MB e não pôde ser aberto.');
+            return;
+        }
 
         const reader = new FileReader();
         reader.onload = () => {
             try {
                 const data = JSON.parse(reader.result);
-                if (!data || data.format !== 'nexus3d-project' || !Array.isArray(data.objects) || !Array.isArray(data.uiElements)) {
+                if (!isValidProjectData(data)) {
                     throw new Error('Formato de projeto inválido.');
                 }
                 openImportedProject(data);
@@ -4254,11 +4311,7 @@
             if (!o.mesh) return;
             if (scene) scene.remove(o.mesh);
             if (o.mesh.geometry) o.mesh.geometry.dispose();
-            if (Array.isArray(o.mesh.material)) {
-                o.mesh.material.forEach(m => m && m.dispose && m.dispose());
-            } else if (o.mesh.material && o.mesh.material.dispose) {
-                o.mesh.material.dispose();
-            }
+            [].concat(o.mesh.material || []).forEach(disposeMaterialSafely);
         });
 
         objects = [];
@@ -4358,7 +4411,7 @@
             scene.add(mesh);
 
             const objData = {
-                id: String(raw.id || ('Cube_' + Math.floor(Math.random() * 100000))),
+                id: ensureUniqueObjectId(raw.id),
                 mesh,
                 type: ['normal', 'player', 'solid', 'board_pawn', 'board_space', 'npc'].includes(raw.type) ? raw.type : 'normal',
                 size,
@@ -4420,7 +4473,7 @@
                 damageSourceAmount: clampNumber(raw.damageSourceAmount, 0.1, 100000, 10),
                 damageSourceTarget: ['player','npc','both'].includes(raw.damageSourceTarget) ? raw.damageSourceTarget : 'both',
                 damageSourceCooldown: clampNumber(raw.damageSourceCooldown, 0.05, 10, 0.75),
-                weaponStartingId: typeof raw.weaponStartingId === 'string' ? raw.weaponStartingId : 'weapon_sword_basic',
+                weaponStartingId: typeof raw.weaponStartingId === 'string' ? raw.weaponStartingId : (Object.prototype.hasOwnProperty.call(raw, 'weaponStartingId') ? null : 'weapon_sword_basic'),
                 weaponDropId: typeof raw.weaponDropId === 'string' ? raw.weaponDropId : null,
                 weaponDropChance: clampNumber(raw.weaponDropChance, 0, 100, 100),
                 weaponInventory: Array.isArray(raw.weaponInventory) ? raw.weaponInventory.filter(id => typeof id === 'string') : [],
@@ -4477,7 +4530,7 @@
         }
 
         uiElements = (data.uiElements || []).map(el => ({
-            id: String(el.id || ('UI_' + Math.floor(Math.random() * 100000))),
+            id: String(el.id || generateUIId()).slice(0, 80),
             text: String(el.text || 'Novo Texto'),
             type: el.type === 'button' ? 'button' : 'text',
             position: ['top-left', 'top-center', 'top-right', 'center', 'bottom-center'].includes(el.position) ? el.position : 'top-left',
@@ -4496,9 +4549,9 @@
 
     function spawnCube() {
         const colorHex = document.getElementById('cube-color').value;
-        const w = parseFloat(document.getElementById('cube-w').value) || 2;
-        const h = parseFloat(document.getElementById('cube-h').value) || 2;
-        const d = parseFloat(document.getElementById('cube-d').value) || 2;
+        const w = clampNumber(parseFloat(document.getElementById('cube-w').value), 0.1, 100, 2);
+        const h = clampNumber(parseFloat(document.getElementById('cube-h').value), 0.1, 100, 2);
+        const d = clampNumber(parseFloat(document.getElementById('cube-d').value), 0.1, 100, 2);
 
         const geometry = new THREE.BoxGeometry(w, h, d);
         const material = new THREE.MeshStandardMaterial({
@@ -4514,7 +4567,7 @@
         scene.add(mesh);
 
         const objData = {
-            id: 'Cube_' + Math.floor(Math.random() * 1000),
+            id: generateObjectId('Cube'),
             mesh: mesh,
             type: 'normal',
             size: { w, h, d },
@@ -4616,7 +4669,7 @@
         scene.add(mesh);
 
         const objData = {
-            id: 'Cube_' + Math.floor(Math.random() * 1000),
+            id: generateObjectId('Cube'),
             mesh: mesh,
             type: orig.type === 'player' || orig.type === 'board_space' ? 'normal' : orig.type,
             size: { w, h, d },
@@ -4688,6 +4741,7 @@
             facePixels: null
         };
 
+        copyGameplaySettings(orig, objData);
         ensurePaintData(orig);
         objData.facePixels = orig.facePixels.map(face => face.slice());
         initializePixelMaterials(objData, objData.facePixels, null, orig.baseColor);
@@ -5306,12 +5360,14 @@
         }
         list.innerHTML = spaces.map(space => {
             const next = getNextBoardSpace(space);
-            const idLiteral = JSON.stringify(space.id);
-            return `<button onclick="selectObjectById(${idLiteral})" class="w-full text-left flex items-center justify-between px-2.5 py-2 rounded-lg bg-slate-800/70 border border-slate-800 hover:border-amber-500/30 transition-colors">
+            return `<button type="button" data-select-object-id="${escapeHTML(space.id)}" class="w-full text-left flex items-center justify-between px-2.5 py-2 rounded-lg bg-slate-800/70 border border-slate-800 hover:border-amber-500/30 transition-colors">
                 <span class="font-medium text-slate-300"><i class="fa-solid fa-location-dot text-amber-400 mr-1.5"></i>${getBoardSpaceDisplayName(space)}</span>
                 <span class="text-[9px] font-mono text-slate-500">${next ? getBoardSpaceDisplayName(next) : 'fim'}</span>
             </button>`;
         }).join('');
+        list.querySelectorAll('[data-select-object-id]').forEach(btn => {
+            btn.addEventListener('click', () => selectObjectById(btn.dataset.selectObjectId));
+        });
         updateBoardTestPawnUI();
     }
 
@@ -5323,7 +5379,7 @@
             boardTestPawnId = pawns[0] ? pawns[0].id : null;
         }
         select.innerHTML = pawns.length
-            ? pawns.map((pawn, index) => `<option value="${pawn.id}">Peão ${index + 1} — ${pawn.id}</option>`).join('')
+            ? pawns.map((pawn, index) => `<option value="${escapeHTML(pawn.id)}">Peão ${index + 1} — ${escapeHTML(pawn.id)}</option>`).join('')
             : '<option value="">Nenhum peão criado</option>';
         select.value = boardTestPawnId || '';
     }
@@ -5360,7 +5416,7 @@
         const eventSelect = document.getElementById('board-space-event');
         if (select) {
             const spaces = getBoardSpaces().filter(item => item !== space);
-            select.innerHTML = '<option value="">Nenhuma (fim do caminho)</option>' + spaces.map(item => `<option value="${item.id}">${getBoardSpaceDisplayName(item)}</option>`).join('');
+            select.innerHTML = '<option value="">Nenhuma (fim do caminho)</option>' + spaces.map(item => `<option value="${escapeHTML(item.id)}">${escapeHTML(getBoardSpaceDisplayName(item))}</option>`).join('');
             select.value = space.nextSpaceId || '';
         }
         if (eventSelect) eventSelect.value = 'none';
@@ -5393,7 +5449,7 @@
         const select = document.getElementById('pawn-current-space');
         const spaces = getBoardSpaces();
         if (select) {
-            select.innerHTML = '<option value="">Automático / ainda não definido</option>' + spaces.map(space => `<option value="${space.id}">${getBoardSpaceDisplayName(space)}</option>`).join('');
+            select.innerHTML = '<option value="">Automático / ainda não definido</option>' + spaces.map(space => `<option value="${escapeHTML(space.id)}">${escapeHTML(getBoardSpaceDisplayName(space))}</option>`).join('');
             select.value = pawn && pawn.pawnCurrentSpaceId ? pawn.pawnCurrentSpaceId : '';
         }
         if (!pawn) return;
@@ -5615,12 +5671,16 @@
         const type = raw && raw.type === 'ranged' ? 'ranged' : 'melee';
         const fallbackId = type === 'ranged' ? 'weapon_blaster_basic' : 'weapon_sword_basic';
         const id = String(raw && raw.id || fallbackId).replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 80);
+        // O formulário de criar arma vem com alcance 2,5 (padrão de corpo a corpo). Numa arma de tiro isso
+        // faz o projétil sumir em ~4 frames, sem aparecer nem acertar. Corrige também armas já salvas assim.
+        let weaponRange = clampNumber(raw && raw.range, 0.5, 1000, type === 'ranged' ? 80 : 2.5);
+        if (type === 'ranged' && weaponRange <= 2.5) weaponRange = 80;
         return {
             id,
             name: String(raw && raw.name || (type === 'ranged' ? 'Arma de Tiro' : 'Espada')).slice(0, 50),
             type,
             damage: clampNumber(raw && raw.damage, 0.1, 100000, type === 'ranged' ? 18 : 25),
-            range: clampNumber(raw && raw.range, 0.5, 1000, type === 'ranged' ? 80 : 2.5),
+            range: weaponRange,
             cooldown: clampNumber(raw && raw.cooldown, 0.05, 10, type === 'ranged' ? 0.32 : 0.45),
             projectileSpeed: clampNumber(raw && raw.projectileSpeed, 2, 200, 35),
             color: normalizeHexColor(raw && raw.color || (type === 'ranged' ? '#38bdf8' : '#e5e7eb')),
@@ -5647,7 +5707,7 @@
         const select = document.getElementById(selectId);
         if (!select) return;
         const noneText = includeNoneLabel || 'Sem arma';
-        select.innerHTML = `<option value="">${noneText}</option>`;
+        select.innerHTML = `<option value="">${escapeHTML(noneText)}</option>`;
         weapons.forEach(weapon => {
             const option = document.createElement('option');
             option.value = weapon.id;
@@ -5718,7 +5778,7 @@
                 item.className='flex items-center justify-between gap-2 bg-slate-900/70 border border-slate-800 px-2.5 py-2 rounded-lg';
                 const iconUrl=weaponIconDataURL(weapon,5);
                 const typeIcon=weapon.type==='ranged'?'fa-crosshairs':'fa-khanda';
-                item.innerHTML=`<div class="flex items-center gap-2 min-w-0"><img src="${iconUrl}" class="weapon-icon-preview" alt=""><div class="min-w-0"><div class="text-[10px] font-semibold text-slate-200 truncate"><i class="fa-solid ${typeIcon} text-red-400 mr-1.5"></i>${weapon.name}</div><div class="text-[9px] text-slate-500">${weapon.type==='ranged'?'Tiro':'Corpo a corpo'} · ${weapon.damage} dano</div></div></div><div class="flex items-center gap-2 shrink-0"><button type="button" class="text-[9px] px-2 py-1 rounded border border-fuchsia-500/20 text-fuchsia-300 hover:bg-fuchsia-500/10" title="Editar ícone">Ícone</button><button type="button" class="text-slate-500 hover:text-rose-400 text-[10px]" title="Excluir arma"><i class="fa-solid fa-trash"></i></button></div>`;
+                item.innerHTML=`<div class="flex items-center gap-2 min-w-0"><img src="${iconUrl}" class="weapon-icon-preview" alt=""><div class="min-w-0"><div class="text-[10px] font-semibold text-slate-200 truncate"><i class="fa-solid ${typeIcon} text-red-400 mr-1.5"></i>${escapeHTML(weapon.name)}</div><div class="text-[9px] text-slate-500">${weapon.type==='ranged'?'Tiro':'Corpo a corpo'} · ${weapon.damage} dano</div></div></div><div class="flex items-center gap-2 shrink-0"><button type="button" class="text-[9px] px-2 py-1 rounded border border-fuchsia-500/20 text-fuchsia-300 hover:bg-fuchsia-500/10" title="Editar ícone">Ícone</button><button type="button" class="text-slate-500 hover:text-rose-400 text-[10px]" title="Excluir arma"><i class="fa-solid fa-trash"></i></button></div>`;
                 const buttons=item.querySelectorAll('button'); buttons[0].addEventListener('click',()=>selectWeaponIconEditor(weapon.id)); buttons[1].addEventListener('click',()=>deleteWeaponDefinition(weapon.id));
                 list.appendChild(item);
             });
@@ -5727,6 +5787,17 @@
         updateWeaponSelect('player-starting-weapon', selectedObject&&selectedObject.type==='player'?selectedObject.weaponStartingId:null,'Sem arma');
         updateWeaponSelect('npc-drop-weapon', selectedObject&&selectedObject.type==='npc'?selectedObject.weaponDropId:null,'Não soltar arma');
     }
+
+    (function bindWeaponCreateTypeDefaults() {
+        const typeSelect = document.getElementById('weapon-create-type');
+        const rangeInput = document.getElementById('weapon-create-range');
+        if (!typeSelect || !rangeInput) return;
+        typeSelect.addEventListener('change', () => {
+            const current = parseFloat(rangeInput.value);
+            if (typeSelect.value === 'ranged' && (!Number.isFinite(current) || current <= 2.5)) rangeInput.value = '80';
+            else if (typeSelect.value !== 'ranged' && current === 80) rangeInput.value = '2.5';
+        });
+    })();
 
     function createWeaponFromTool() {
         const name = String(document.getElementById('weapon-create-name')?.value || '').trim() || 'Nova Arma';
@@ -5898,7 +5969,11 @@
         if (!prompt) return;
         if (pickup) {
             const weapon = getWeaponById(pickup.weaponId);
-            prompt.innerHTML = weapon ? `<div class="weapon-pickup-card">[F] Pegar <strong>${weapon.name}</strong></div>` : '';
+            const promptKey = weapon ? weapon.id : '';
+            if (prompt.dataset.weaponId !== promptKey || !prompt.firstChild) {
+                prompt.innerHTML = weapon ? `<div class="weapon-pickup-card">[F] Pegar <strong>${escapeHTML(weapon.name)}</strong></div>` : '';
+                prompt.dataset.weaponId = promptKey;
+            }
             prompt.classList.toggle('hidden', !weapon);
         } else {
             prompt.classList.add('hidden');
@@ -5911,19 +5986,70 @@
         const dir = new THREE.Vector3();
         if (camera) camera.getWorldDirection(dir);
         if (dir.lengthSq() < 0.0001) dir.set(0, 0, -1);
+        if (!isFirstPersonPlayerActive()) {
+            // Em 3ª pessoa a câmera olha de cima para baixo (~30°). Usar essa direção inclinada
+            // fazia o tiro afundar no chão sem nunca alcançar os inimigos. Atira na horizontal.
+            dir.y = 0;
+            if (dir.lengthSq() < 0.05 && camera && camera.quaternion) {
+                // câmera quase vertical: usa o "para cima" da câmera como frente
+                dir.set(0, 1, 0).applyQuaternion(camera.quaternion);
+                dir.y = 0;
+            }
+            if (dir.lengthSq() < 0.0001) dir.set(0, 0, -1);
+        }
         return dir.normalize();
+    }
+
+    // Assistência de mira (só em 3ª pessoa): mira no inimigo vivo mais alinhado com a frente da câmera.
+    const AUTO_AIM_CONE_DEGREES = 18;
+    function findAutoAimTarget(origin, flatDirection, weapon) {
+        const minCos = Math.cos(THREE.MathUtils.degToRad(AUTO_AIM_CONE_DEGREES));
+        let best = null;
+        let bestScore = Infinity;
+        objects.forEach(npc => {
+            if (!isNPC(npc) || npc.healthDead) return;
+            ensureHealthConfig(npc);
+            if (!npc.healthEnabled) return;
+            const dx = npc.mesh.position.x - origin.x;
+            const dz = npc.mesh.position.z - origin.z;
+            const flatLength = Math.hypot(dx, dz);
+            if (flatLength < 0.5 || flatLength > weapon.range) return;
+            const cos = (dx * flatDirection.x + dz * flatDirection.z) / flatLength;
+            if (cos < minCos) return;
+            const score = (1 - cos) * 100 + flatLength * 0.05;
+            if (score < bestScore) { best = npc; bestScore = score; }
+        });
+        return best;
     }
 
     function fireRangedWeapon(weapon) {
         if (!playerObject || !scene) return;
-        const direction = getAimDirection();
+        let direction = getAimDirection();
+        if (!isFirstPersonPlayerActive()) {
+            const target = findAutoAimTarget(playerObject.mesh.position, direction, weapon);
+            if (target) {
+                direction = target.mesh.position.clone().sub(playerObject.mesh.position).normalize();
+            }
+        }
         const start = playerObject.mesh.position.clone().addScaledVector(direction, Math.max(playerObject.size.w, playerObject.size.d) * 0.7 + 0.65);
-        const material = new THREE.MeshStandardMaterial({ color: parseInt(weapon.color.replace('#','0x')), emissive: parseInt(weapon.color.replace('#','0x')), emissiveIntensity: 0.5, roughness: 0.25, metalness: 0.1 });
-        const mesh = new THREE.Mesh(new THREE.SphereGeometry(0.12, 12, 12), material);
+        const projectileColor = parseInt(weapon.color.replace('#', '0x'));
+        const material = new THREE.MeshBasicMaterial({ color: projectileColor, fog: false });
+        const mesh = new THREE.Mesh(new THREE.SphereGeometry(0.22, 12, 12), material);
+        const glow = new THREE.Mesh(
+            new THREE.SphereGeometry(0.5, 12, 12),
+            new THREE.MeshBasicMaterial({ color: projectileColor, transparent: true, opacity: 0.35, depthWrite: false, fog: false })
+        );
+        mesh.add(glow);
         mesh.position.copy(start);
-        mesh.castShadow = true;
+        mesh.castShadow = false;
+        mesh.frustumCulled = false;
+        glow.frustumCulled = false;
+        mesh.renderOrder = 10;
         scene.add(mesh);
-        weaponProjectiles.push({ mesh, direction, speed: weapon.projectileSpeed, damage: weapon.damage, maxDistance: weapon.range, traveled: 0, source: playerObject });
+        // Blocos sólidos em que o tiro já nasce dentro (ex.: parede colada no player) não o removem.
+        const startBox = new THREE.Box3().setFromCenterAndSize(start, new THREE.Vector3(0.36, 0.36, 0.36));
+        const ignoredSolids = new Set(objects.filter(o => o.type === 'solid' && boxesOverlap3D(startBox, getObjectBox(o))).map(o => o.id));
+        weaponProjectiles.push({ mesh, direction, speed: weapon.projectileSpeed, damage: weapon.damage, maxDistance: weapon.range, traveled: 0, source: playerObject, ignoredSolids });
     }
 
     function performPlayerWeaponAttack() {
@@ -5962,16 +6088,28 @@
         for (let i = weaponProjectiles.length - 1; i >= 0; i--) {
             const projectile = weaponProjectiles[i];
             if (!projectile.mesh) { weaponProjectiles.splice(i, 1); continue; }
-            const travel = projectile.speed * delta;
-            projectile.mesh.position.addScaledVector(projectile.direction, travel);
-            projectile.traveled += travel;
-            let hit = null;
-            for (const npc of objects) {
-                if (!isNPC(npc) || npc.healthDead) continue;
-                if (boxesOverlap3D(new THREE.Box3().setFromCenterAndSize(projectile.mesh.position, new THREE.Vector3(0.24,0.24,0.24)), getObjectBox(npc))) { hit = npc; break; }
+            // Movimento em passos curtos: tiros rápidos atravessavam inimigos finos entre dois frames.
+            const totalTravel = projectile.speed * delta;
+            const steps = Math.max(1, Math.ceil(totalTravel / 0.25));
+            const stepTravel = totalTravel / steps;
+            for (let s = 0; s < steps; s++) {
+                projectile.mesh.position.addScaledVector(projectile.direction, stepTravel);
+                projectile.traveled += stepTravel;
+                const projectileBox = new THREE.Box3().setFromCenterAndSize(projectile.mesh.position, new THREE.Vector3(0.3, 0.3, 0.3));
+                let hit = null;
+                for (const npc of objects) {
+                    if (!isNPC(npc) || npc.healthDead) continue;
+                    if (boxesOverlap3D(projectileBox, getObjectBox(npc))) { hit = npc; break; }
+                }
+                if (hit) { applyDamage(hit, projectile.damage, projectile.source); removeWeaponProjectile(i); break; }
+                const blocked = objects.some(o => o.type === 'solid'
+                    && !(projectile.ignoredSolids && projectile.ignoredSolids.has(o.id))
+                    && boxesOverlap3D(projectileBox, getObjectBox(o)));
+                if (blocked || projectile.traveled >= projectile.maxDistance || !isPointInsidePlayableArea(projectile.mesh.position)) {
+                    removeWeaponProjectile(i);
+                    break;
+                }
             }
-            if (hit) { applyDamage(hit, projectile.damage, projectile.source); removeWeaponProjectile(i); continue; }
-            if (projectile.traveled >= projectile.maxDistance || !isPointInsidePlayableArea(projectile.mesh.position)) removeWeaponProjectile(i);
         }
     }
 
@@ -5987,6 +6125,12 @@
         if (projectile.mesh && scene) scene.remove(projectile.mesh);
         if (projectile.mesh && projectile.mesh.geometry) projectile.mesh.geometry.dispose();
         if (projectile.mesh && projectile.mesh.material) projectile.mesh.material.dispose();
+        if (projectile.mesh && projectile.mesh.children) {
+            projectile.mesh.children.forEach(child => {
+                if (child.geometry) child.geometry.dispose();
+                if (child.material && child.material.dispose) child.material.dispose();
+            });
+        }
         weaponProjectiles.splice(index, 1);
     }
 
@@ -5995,9 +6139,12 @@
         if(!hud||!isPlayMode||!playerObject||!Array.isArray(playerObject.weaponInventory)||playerObject.weaponInventory.length===0||playerGameOver){ if(hud) hud.classList.add('hidden'); return; }
         const active=getWeaponById(playerObject.activeWeaponId); if(!active){ hud.classList.add('hidden'); return; }
         hud.classList.remove('hidden');
-        const slots=playerObject.weaponInventory.map((id,index)=>{ const weapon=getWeaponById(id); if(!weapon) return ''; const icon=weaponIconDataURL(weapon,6); return `<span class="weapon-hud-slot ${id===playerObject.activeWeaponId?'active':''}" title="${weapon.name}"><img src="${icon}" style="width:16px;height:16px;image-rendering:pixelated;" alt=""></span>`; }).join('');
+        const hudSignature = playerObject.weaponInventory.join(',') + '|' + active.id;
+        if (hudSignature === lastWeaponHudSignature && hud.firstChild) return;
+        lastWeaponHudSignature = hudSignature;
+        const slots=playerObject.weaponInventory.map((id,index)=>{ const weapon=getWeaponById(id); if(!weapon) return ''; const icon=weaponIconDataURL(weapon,6); return `<span class="weapon-hud-slot ${id===playerObject.activeWeaponId?'active':''}" title="${escapeHTML(weapon.name)}"><img src="${icon}" style="width:16px;height:16px;image-rendering:pixelated;" alt=""></span>`; }).join('');
         const activeIcon=weaponIconDataURL(active,20);
-        hud.innerHTML=`<div class="weapon-hud-card"><div class="flex items-center gap-2"><img src="${activeIcon}" class="weapon-hud-icon" alt="><div class="min-w-0"><div class="weapon-hud-name">${active.name}</div><div class="weapon-hud-meta">${active.type==='ranged'?'Arma de tiro':'Corpo a corpo'} · ${active.damage} dano · ${active.type==='ranged'?'Q dispara':'Q ataca'}</div></div></div><div class="weapon-hud-slots">${slots}</div></div>`;
+        hud.innerHTML=`<div class="weapon-hud-card"><div class="flex items-center gap-2"><img src="${activeIcon}" class="weapon-hud-icon" alt=""><div class="min-w-0"><div class="weapon-hud-name">${escapeHTML(active.name)}</div><div class="weapon-hud-meta">${active.type==='ranged'?'Arma de tiro':'Corpo a corpo'} · ${active.damage} dano · ${active.type==='ranged'?'Q dispara':'Q ataca'}</div></div></div><div class="weapon-hud-slots">${slots}</div></div>`;
     }
 
     function switchPlayerWeapon(slotIndex) {
@@ -6372,9 +6519,13 @@
         return obj.id || 'Objeto';
     }
 
-    function renderHealthBars() {
+    let lastHealthBarSignature = '';
+    function renderHealthBars(force = false) {
         const overlay = document.getElementById('health-bars-overlay');
         if (!overlay) return;
+        const signature = !isPlayMode ? 'off' : objects.filter(isHealthCombatant).map(o => [o.id, o.healthEnabled, o.healthShowBar, o.healthDead, o.healthBarPosition, o.healthCurrent, o.maxHealth, o.npcName].join(':')).join('|');
+        if (!force && signature === lastHealthBarSignature) return;
+        lastHealthBarSignature = signature;
         overlay.innerHTML = '';
         if (!isPlayMode) return;
         const stacks = {};
@@ -6505,6 +6656,7 @@
         playerCrouched = false;
         playerSlideActive = false;
         playerSlideTime = 0;
+        if (playerObject && playerObject.mesh) playerObject.mesh.scale.y = 1;
         damageCooldowns = new Map();
         gameTime = 0;
         initializeWeaponRuntime();
@@ -6699,11 +6851,7 @@
 
         scene.remove(selectedObject.mesh);
         selectedObject.mesh.geometry.dispose();
-        if (Array.isArray(selectedObject.mesh.material)) {
-            selectedObject.mesh.material.forEach(m => m.dispose());
-        } else {
-            selectedObject.mesh.material.dispose();
-        }
+        [].concat(selectedObject.mesh.material || []).forEach(disposeMaterialSafely);
 
         objects = objects.filter(o => o !== selectedObject);
         refreshAllLinkedTransforms();
@@ -6830,6 +6978,8 @@
     }
 
     function togglePlayMode() {
+        if (isPlayMode) { stopPlayMode(); return; }
+        if (document.activeElement && document.activeElement !== document.body && document.activeElement.blur) document.activeElement.blur();
         if (isPaintMode) togglePaintMode();
 
         savedState = objects.map(o => ({
@@ -6885,6 +7035,9 @@
         if (playerDeathOverlay) playerDeathOverlay.classList.add('hidden');
         const healthOverlay = document.getElementById('health-bars-overlay');
         if (healthOverlay) healthOverlay.innerHTML = '';
+        lastHealthBarSignature = '';
+        lastWeaponHudSignature = '';
+        Object.keys(keysPressed).forEach(k => { keysPressed[k] = false; });
         document.getElementById('btn-stop').classList.add('hidden');
         document.getElementById('btn-play').classList.remove('hidden');
         document.getElementById('play-mode-indicator').classList.add('hidden');
@@ -6944,8 +7097,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mx-auto text-xl">
                     <i class="fa-solid fa-circle-info"></i>
                 </div>
-                <h4 class="font-bold text-lg text-white">${title}</h4>
-                <p class="text-slate-400 text-sm">${message}</p>
+                <h4 class="font-bold text-lg text-white">${escapeHTML(title)}</h4>
+                <p class="text-slate-400 text-sm">${escapeHTML(message)}</p>
                 <button onclick="this.closest('.fixed').remove()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm transition-all shadow-lg shadow-indigo-600/20">Entendido</button>
             </div>
         `;
@@ -7287,11 +7440,6 @@
         } else {
             updateNPCInteractionPrompt();
         }
-
-    function moveToward(current, target, maxDelta) {
-        if (Math.abs(target - current) <= maxDelta) return target;
-        return current + Math.sign(target - current) * maxDelta;
-    }
 
         if (isPlayMode && playerObject && !playerGameOver) {
             const baseSpeed = Math.max(1, Number(playerObject.playerSpeed) || 10);
